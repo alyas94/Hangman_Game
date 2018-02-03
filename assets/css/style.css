@@ -1,0 +1,5 @@
+/*STYLE SHEET FOR INDEX.HTML --- HANGMAN GAME*/
+
+#emptyCurrentWord{
+	letter-spacing: 5px;
+}

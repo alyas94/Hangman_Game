@@ -3,18 +3,18 @@
 //initalize variables:
 var words = ["example", "another", "words", "different"
 ,"something", "new", "current", "random"];
-var guessedLetter; //letter user has guessed
+var guess; //letter user has guessed
 var guessesRemaining = 13; //starts at 13 and will decrease
-var answer = ""; //the correct answer, will be _ _ _ initially
-var alreadyGuessed; //Letters The User Has Already Guessed
+var answer = ""; //the correct answer,, will be _ _ _ initially
+var alreadyGuessed = ""; //Letters The User Has Already Guessed
 
 //this will find random word from words array 
 var randomWord = words[Math.floor(Math.random()*words.length)]
 console.log(randomWord);
 
 //take random word and put _ _ _ in its place
-var wordLength = randomWord.length;
-console.log(wordLength);
+var remainingLetters = randomWord.length;
+console.log(remainingLetters);
 for (var i = 0; i < randomWord.length; i++) {
 	answer = answer + "_"
 }
@@ -23,25 +23,38 @@ console.log(answer)
 var WordDiv = document.getElementById("emptyCurrentWord");
 	WordDiv.innerHTML = answer;
 
-//gets users guess from keyboard
+	//gets users guess from keyboard
 document.onkeyup = function(event) {
-	guessedLetter = event.key;
-	console.log(guessedLetter);
-	//now that we have users guess, we'll search through and see if
-	//its correct
-}
+	guess = event.key;
+	console.log(guess);
+	if(remainingLetters > 0){
+		// BOOLEAN, if true, its a repeat guess
+		var repeatGuess = false; 
+		for(var i = 0; i < randomWord.length; i++){
+			if(alreadyGuessed[i] === guess){
+				repeatGuess = true;
+				console.log("repeat guess: " + repeatGuess);
+			}
+		} // ^^if its a repeat guess, if Statement below wont run
 
-//for loop used to search through the word for a correct guess
-for (var i = 0; i<randomWord.length; i++) {
-	if (randomWord[i] === guessedLetter){
-		answer[i] = guessedLetter;
+		//for loop to check if guess is correct
+		if(repeatGuess == false){
+			for (var j = 0; j < randomWord.length; j++){
+				if(randomWord[j] === guess){
+					answer[j] = guess;
+					console.log("CORRECT GUESS");
+					remainingLetters --;
+					console.log("letters left to guess: " + 
+						remainingLetters);
+					alreadyGuessed = alreadyGuessed + guess;
+					console.log("letters already guessed: " 
+						+ alreadyGuessed);
+				}
+			}
+		}
 	}
-	i++;
 }
-
-
-
-
+	// if guessedLetter didnt appear in answer add it to alreadyGuessed
 
 // examples:
 // var targetDiv = document.getElementById("guessedLetter");

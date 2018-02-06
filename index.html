@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Hangman!</title>
 	<!-- CSS CDN GOES HERE -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="assets/css/style.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
 </head>
 <body>
 	<!-- header goes here -->
-	<h1>HANGMAN GAME</h1>
-
+	<nav class="text-center navbar-light bg-light">
+  	<a class = text-center>
+    <img src="assets/images/ESPN-logo.png" width="290">
+    HANGMAN
+  	</a>
+	</nav>
 	<!-- Body of game goes here -->
-	<div>PRESS ANY KEY TO GET STARTED!</div>
-	<p></p>
-	<div>Wins:</div>
-	<!-- Empty div for wins that we will keep track of in JS -->
-	<div id= "emptyWins"></div>
+	<div class ="maindiv bg-light text-center">
+		<div class="redText">TRY TO GUESS THE SPORTS TEAM NAME!</div>
+		<p></p>
 
-	<div>Current Word</div>
-	<!-- empty divs for word User is guessing-->
-	<div id= "emptyCurrentWord"></div>
+		<div>Current Word</div>
+		<!-- empty divs for word User is guessing-->
+		<div id= "emptyCurrentWord"></div>
 
-	<div>Number of guesses remaining:</div>
-	<div id= "emptyGuessesLeft"></div>
+		<div>Number of guesses remaining:</div>
+		<div id= "emptyGuessesLeft"></div>
 
-	<div>Letters already guessed:</div>
-	<div id="emptyLettersGuessed"></div>
+		<div>Letters already guessed:</div>
+		<div id="emptyLettersGuessed"></div>
+		<p></p>
+		<div id="emptyPhoto"></div>
+	</div>
 
 
 <!-- JS SRC LINK -->

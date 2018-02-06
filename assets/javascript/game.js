@@ -1,8 +1,9 @@
 // this JS file connects to index.html & runs the hangman game
 
 //initalize variables:
-var words = ["example", "another", "words", "different"
-,"something", "new", "current", "random"];
+var words = ["warriors", "patriots", "giants", "yankees"
+,"steelers", "padres", "celtics", "cowboys", "pirates",
+"lakers"];
 var guessedRight = ""; //letters guessed correctly
 var guess; //letter user has just guessed
 var guessesRemaining = 13; //starts at 13 and will decrease
